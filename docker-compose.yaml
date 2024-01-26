@@ -1,0 +1,11 @@
+version: "3.9"
+
+services:
+  dnscrypt-proxy:
+    image: cba44/dnscrypt-proxy:latest
+    container_name: dnscrypt-proxy
+    restart: unless-stopped
+    volumes:
+      - ./app/dnscrypt-proxy.toml:/dnscrypt/config/dnscrypt-proxy.toml
+    ports:
+      - 53:53/udp
